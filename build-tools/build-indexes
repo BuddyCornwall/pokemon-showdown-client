@@ -482,11 +482,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			}
 		}
 
-		nonstandardMoves.push(...Object.keys(Dex.data.Moves).filter(id => {
-			const move = Dex.mod(isSSDLC1 ? 'gen8dlc1' : isPreDLC ? 'gen9predlc' : 'gen9dlc1')moves.get(id);
-			const bMove = Dex.mod(isSSDLC1 ? 'gen8' : 'gen9').moves.get(id);
-			return bMove.isNonstandard !== move.isNonstandard;
-		}));
+));
 
 		const tiers = [];
 		const items = [];
