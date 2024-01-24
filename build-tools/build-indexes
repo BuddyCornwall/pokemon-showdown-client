@@ -480,9 +480,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 					monotypeBans[species.id] = 1;
 				}
 			}
-		}
-
-));
+		};
 
 		const tiers = [];
 		const items = [];
