@@ -8,9 +8,15 @@ const child_process = require("child_process");
 const rootDir = path.resolve(__dirname, '..');
 process.chdir(rootDir);
 
+<<<<<<< HEAD
 if (!fs.existsSync('caches/pokemon-showdown')) {
 	child_process.execSync('git clone https://github.com/buddycornwall/pokemon-showdown.git', {
 		cwd: 'caches',
+=======
+if (!fs.existsSync('data/pokemon-showdown')) {
+	child_process.execSync('git clone https://github.com/buddycornwall/pokemon-showdown.git', {
+		cwd: 'data',
+>>>>>>> 327d8d49d19a9cd208c62183903d2f52b6dfa6e6
 	});
 }
 
@@ -322,7 +328,11 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 	const LC = GENS.map(num => num + 0.7);
 	const STADIUM = [2.04, 1.04];
 	const NATDEX = [9.1, 8.1];
+<<<<<<< HEAD
 	const OTHER = [9.9, 9.411, 9.41, 9.401, 9.4, 9.2, -9.4, -9.401, 8.6, 8.4, 8.2, 8.1, -8.4, -8.6, 7.1];
+=======
+	const OTHER = [9.9, 9.2, 8.6, 8.4, 8.2, 8.1, -8.4, -8.6, 7.1];
+>>>>>>> 327d8d49d19a9cd208c62183903d2f52b6dfa6e6
 
 	// process.stdout.write("\n  ");
 	for (const genIdent of [...GENS, ...DOUBLES, ...VGC, ...NFE, ...STADIUM, ...OTHER, ...NATDEX, ...LC]) {
