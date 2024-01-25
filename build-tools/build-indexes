@@ -9,7 +9,7 @@ const rootDir = path.resolve(__dirname, '..');
 process.chdir(rootDir);
 
 if (!fs.existsSync('caches/pokemon-showdown')) {
-	child_process.execSync('git clone https://github.com/buddycornwall/pokemon-showdown.git', {
+	child_process.execSync('git clone https://github.com/smogon/pokemon-showdown.git', {
 		cwd: 'caches',
 	});
 }
@@ -480,7 +480,13 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 					monotypeBans[species.id] = 1;
 				}
 			}
-		};
+		}
+
+		nonstandardMoves.push(...Object.keys(Dex.data.Moves).filter(id => {
+			const move = Dex.mod(isSSDLC1 ? 'gen8dlc1' : isPreDLC ? 'gen9predlc' : 'gen9dlc1').moves.get(id);
+			const bMove = Dex.mod(isSSDLC1 ? 'gen8' : 'gen9').moves.get(id);
+			return bMove.isNonstandard !== move.isNonstandard;
+		}));
 
 		const tiers = [];
 		const items = [];
