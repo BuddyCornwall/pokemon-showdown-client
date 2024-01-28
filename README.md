@@ -1,5 +1,5 @@
 Pokémon Showdown Client
-========================================================================
+=========================================================================
 
 Navigation: [Website][1] | [Server repository][2] | **Client repository** | [Dex repository][3]
 
